@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
+import 'animate.css';
 
-const AppWrapper = styled.div`
-  text-align: center;
-`;
+import Slideshow from './Slideshow';
+import './styles.css';
 
 class App extends Component {
   render() {
     return (
-      <AppWrapper>
-        Multidash  
-      </AppWrapper>  
+      <div className="app">
+        <Slideshow />
+      </div>
     );
   }
 }

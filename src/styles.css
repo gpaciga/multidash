@@ -1,0 +1,47 @@
+.app {
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.slideshow {
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+}
+
+.slide {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.slide.current {
+  background: blue;
+  text: white;
+}
+
+.slide.next {
+  display: none;
+}
+
+.slide.previous {
+  background: red;
+  text: white;
+}
+
+.slide.hidden {
+  display: none;
+}
+
+.slide iframe {
+  border: 0;
+  width: 100%;
+  height: 100vh;
+}
+

@@ -6,10 +6,10 @@
   "author": "Gregory Paciga",
   "private": true,
   "dependencies": {
+    "animate.css": "^3.7.0",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
-    "react-scripts": "2.0.5",
-    "styled-components": "^4.0.2"
+    "react-scripts": "2.0.5"
   },
   "scripts": {
     "start": "react-scripts start",
