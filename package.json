@@ -1,6 +1,9 @@
 {
   "name": "multidash",
   "version": "0.1.0",
+  "description": "Simple slideshow for displaying multiple dashboards",
+  "homepage": "https://github.com/gpaciga/multidash.git",
+  "author": "Gregory Paciga",
   "private": true,
   "dependencies": {
     "react": "^16.5.2",
