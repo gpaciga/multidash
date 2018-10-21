@@ -10,7 +10,7 @@ Urls to scroll through and the cadence are defined by an array in `src/config.js
 
 Type can be either `url` or `img`. Optionally, `seconds` controls how long to stay on the slide.
 
-Images can be hosted in the `public` directory.
+Images can be hosted in the `public` directory. Example puppy from unsplash.com.
 
 Start with `npm run start`.
 
