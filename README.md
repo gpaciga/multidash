@@ -6,7 +6,11 @@ Very work in progress.
 
 ## Usage
 
-Set urls to scroll through and their cadence in `src/Slideshow.js`.
+Urls to scroll through are defined by an array in `public/config.json`.
+
+Image files can be put in `public` and listed in the array too.
+
+Cadence is set by a constant at the top of `src/Slideshow.js`.
 
 Start with `npm run start`.
 
