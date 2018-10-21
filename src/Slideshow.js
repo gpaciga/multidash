@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 import Slide from './Slide';
 
-const URLS = [
-  "http://example.com",
-];
-
 const SECONDS_PER_SLIDE = 60;
 
 class Slideshow extends Component {
@@ -13,14 +9,21 @@ class Slideshow extends Component {
     super();
     this.state = {
       current: 0,
-      slides: URLS
+      slides: []
     };
   }
 
   componentDidMount() {
+
+    fetch('config.json')
+    .then(response => response.json())
+    .then(config => {
+      this.setState({slides: config});
+    });
+
     this.iterator = setInterval(() => {
        const nextSlide = (this.state.current + 1) % this.state.slides.length;
-       this.setState({current: nextSlide });
+       this.setState({current: nextSlide});
     }, SECONDS_PER_SLIDE * 1000);
   }
 
@@ -39,7 +42,7 @@ class Slideshow extends Component {
         state = "next";
       }
 
-      slides.push(<Slide type="url" path={this.state.slides[i]} state={state} />);
+      slides.push(<Slide type="url" path={this.state.slides[i]} state={state} key={i} />);
     }
 
     return (
