@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Slide from './Slide';
-
-const SECONDS_PER_SLIDE = 60;
+import * as CONFIG from '../config';
 
 class Slideshow extends Component {
 
@@ -9,22 +8,15 @@ class Slideshow extends Component {
     super();
     this.state = {
       current: 0,
-      slides: []
+      slides: CONFIG.SLIDES
     };
   }
 
   componentDidMount() {
-
-    fetch('config.json')
-    .then(response => response.json())
-    .then(config => {
-      this.setState({slides: config});
-    });
-
     this.iterator = setInterval(() => {
        const nextSlide = (this.state.current + 1) % this.state.slides.length;
        this.setState({current: nextSlide});
-    }, SECONDS_PER_SLIDE * 1000);
+    }, CONFIG.DEFAULT_SECONDS_PER_SLIDE * 1000);
   }
 
   render() {

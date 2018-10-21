@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import 'animate.css';
 
 import Slideshow from './Slideshow';
-import './styles.css';
+import '../styles/app.css';
 
 class App extends Component {
   render() {
