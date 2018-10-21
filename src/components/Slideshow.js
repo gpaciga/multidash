@@ -34,7 +34,7 @@ class Slideshow extends Component {
         state = "next";
       }
 
-      slides.push(<Slide type="url" path={this.state.slides[i]} state={state} key={i} />);
+      slides.push(<Slide type={this.state.slides[i].type} path={this.state.slides[i].path} state={state} key={i} />);
     }
 
     return (

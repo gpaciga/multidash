@@ -15,9 +15,16 @@ class Slide extends Component {
       classes = "slide hidden";
     }
 
+    let tag;
+    if (this.props.type === "url") {
+      tag = (<iframe title={this.props.path} src={this.props.path}></iframe>);
+    } else {
+      tag = (<img src={this.props.path} alt="" />);
+    }
+
     return (
       <div className={classes}>
-        <iframe title={this.props.path} src={this.props.path}></iframe>
+        {tag}
       </div>
     );
   }
