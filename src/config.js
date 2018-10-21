@@ -8,6 +8,7 @@ export const SLIDES = [
   }, {
     type: "img",
     path: "images/puppy.jpg",
+    seconds: 5
   }
 ];
 

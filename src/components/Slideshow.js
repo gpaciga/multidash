@@ -13,10 +13,18 @@ class Slideshow extends Component {
   }
 
   componentDidMount() {
-    this.iterator = setInterval(() => {
-       const nextSlide = (this.state.current + 1) % this.state.slides.length;
-       this.setState({current: nextSlide});
-    }, CONFIG.DEFAULT_SECONDS_PER_SLIDE * 1000);
+    this.setCurrentSlide(0);
+  }
+
+  nextSlide() {
+    const nextSlide = (this.state.current + 1) % this.state.slides.length;
+    this.setCurrentSlide(nextSlide);
+  }
+
+  setCurrentSlide(index) {
+    const nextSeconds = this.state.slides[index].seconds || CONFIG.DEFAULT_SECONDS_PER_SLIDE;
+    this.setState({current: index});
+    this.timer = setTimeout(() => {this.nextSlide()}, nextSeconds * 1000);
   }
 
   render() {

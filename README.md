@@ -8,7 +8,9 @@ Very work in progress.
 
 Urls to scroll through and the cadence are defined by an array in `src/config.js`.
 
-Image files can be put in `public` and listed in the array too.
+Type can be either `url` or `img`. Optionally, `seconds` controls how long to stay on the slide.
+
+Images can be hosted in the `public` directory.
 
 Start with `npm run start`.
 
@@ -16,5 +18,4 @@ Start with `npm run start`.
 
 - better handling of plain image slides
 - interface to click through slides manually
-- set time on each slide independently
 
