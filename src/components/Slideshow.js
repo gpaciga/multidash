@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Slide from './Slide';
+import Controls from './Controls';
 import * as CONFIG from '../config';
 
 class Slideshow extends Component {
@@ -8,6 +9,7 @@ class Slideshow extends Component {
     super();
     this.state = {
       current: 0,
+      previous: 0,
       slides: CONFIG.SLIDES
     };
   }
@@ -17,13 +19,26 @@ class Slideshow extends Component {
   }
 
   nextSlide() {
-    const nextSlide = (this.state.current + 1) % this.state.slides.length;
-    this.setCurrentSlide(nextSlide);
+    this.changeSlideIndexBy(1);
   }
 
-  setCurrentSlide(index) {
-    const nextSeconds = this.state.slides[index].seconds || CONFIG.DEFAULT_SECONDS_PER_SLIDE;
-    this.setState({current: index});
+  prevSlide() {
+    this.changeSlideIndexBy(-1);
+  }
+
+  changeSlideIndexBy(change) {
+    const newSlide = (this.state.current + this.state.slides.length + change) % this.state.slides.length;
+    this.setCurrentSlide(newSlide);
+  }
+
+  setCurrentSlide(nextIndex) {
+    clearTimeout(this.timer);
+    const prevIndex = this.state.current;
+    const nextSeconds = this.state.slides[nextIndex].seconds || CONFIG.DEFAULT_SECONDS_PER_SLIDE;
+    this.setState({
+      current: nextIndex,
+      previous: prevIndex
+    });
     this.timer = setTimeout(() => {this.nextSlide()}, nextSeconds * 1000);
   }
 
@@ -36,10 +51,8 @@ class Slideshow extends Component {
       let state = "hidden";
       if (i === this.state.current) {
         state = "current";
-      } else if (i === (this.state.current - 1 + nslides) % nslides) {
+      } else if (i === this.state.previous) {
         state = "previous";
-      } else if (i === (this.state.current + 1) % nslides) {
-        state = "next";
       }
 
       slides.push(<Slide type={this.state.slides[i].type} path={this.state.slides[i].path} state={state} key={i} />);
@@ -47,6 +60,7 @@ class Slideshow extends Component {
 
     return (
       <div className="slideshow">
+        <Controls next={this.nextSlide.bind(this)} previous={this.prevSlide.bind(this)} />
         {slides}
       </div>
     );

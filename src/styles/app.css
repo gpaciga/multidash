@@ -45,3 +45,19 @@
   margin: auto;
 }
 
+.controls {
+  position: absolute;
+  z-index: 2;
+  bottom: 0;
+  width: 100%;
+  min-height: 50px;
+}
+
+.controls>button {
+  display: none;
+}
+
+.controls:hover>button {
+  display: inline;
+}
+

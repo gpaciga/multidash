@@ -14,8 +14,12 @@ Images can be hosted in the `public` directory. Example puppy from unsplash.com.
 
 Start with `npm run start`.
 
+Next/Previous buttons appear when you hover over the bottom of the screen.
+
 ## Future
 
-- better handling of plain image slides
-- interface to click through slides manually
+- expand small images to fill screen
+- change animation direction when clicking "previous"
+- nicer looking buttons
+- interface to add slides
 
