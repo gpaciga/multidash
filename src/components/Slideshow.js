@@ -51,6 +51,7 @@ class Slideshow extends Component {
       let state = "hidden";
       if (i === this.state.current) {
         state = "current";
+        console.log(`Current ${this.state.slides[i].type}: ${this.state.slides[i].path}`);
       } else if (i === this.state.previous) {
         state = "previous";
       }
