@@ -1,6 +1,6 @@
 # Multidash
 
-App intended for cycling through multiple dashboards on a single monitor. Prototype project as a little side project, no promises this is either unique or useful.
+App intended for cycling through multiple dashboards on a single monitor. Prototype project as a little side project, no promises this is either unique or useful. In fact, the Chrome/Chromium extension [Tab Roulette](https://chrome.google.com/webstore/detail/tab-roulette/dlgdimppibbgkjbhnfbkgbfgiclmjlch?hl=en) does pretty much everything this app does, but with less setup (just replace `config.js` with a folder of bookmarks).
 
 Very work in progress.
 
